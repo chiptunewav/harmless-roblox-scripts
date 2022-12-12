@@ -1,0 +1,9 @@
+--SBS Skill Keybind Changer by BrokenNPC
+getgenv().KeyCode = Enum.KeyCode.E --change to any key
+local a = game:GetService("UserInputService")
+local b = game:GetService("VirtualInputManager")
+a.InputBegan:Connect(function(input)
+    if input.KeyCode == getgenv().KeyCode then
+        b:SendKeyEvent(true,"F",false,game)
+    end
+end)
